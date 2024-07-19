@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: AmazingProductService
+  description: AmazingProductService
+  version: 1.0.0
+servers:
+  - url: 'https://localhost:8080'
+    description: Local server
+paths:
+
+   /products:
+
+     get:
+       summary: Read all products
+       responses:
+         200:
+           description: Returned list of products
+           content:
+             'application/json':
+               schema:
+                 type: array
+                 items:
+                   $ref: '#/components/schemas/product'
+
+     post:
+       summary: Create a product
+       requestBody:
+         description: Product to create
+         content:
+           'application/json':
+             schema:
+               $ref: '#/components/schemas/product'
+       responses:
+         400:
+           description: Invalid product
+         409:
+           description: Product already exists
+         200:
+           description: Created product
+
+
+   /products/{id}:
+     parameters:
+       - name: id
+         in: path
+         description: id of the product
+         required: true
+         schema:
+           type: integer
+           example: 1
+
+     get:
+       summary: get a product by id
+       requestBody:
+         description: id of the product
+         content:
+           'application/json':
+             schema:
+               $ref: '#/components/schemas/product'
+       responses:
+         400:
+           description: Invalid id
+         404:
+           description: Product does not exist
+         200:
+           description: Returned product
+
+     delete:
+       summary: Delete a product
+       requestBody:
+         description: Product to delete
+         content:
+           'application/json':
+             schema:
+               $ref: '#/components/schemas/product'
+       responses:
+         400:
+           description: Invalid id
+         409:
+           description: Product not found
+         200:
+           description: Created product
+
+
+components:
+  schemas:
+    product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        category:
+          type: string
+        price:
+          type: integer
+      example:
+        id: 1
+        name: "Amazing Product"
+        category: "Electronics"
+        price: 1000
+  

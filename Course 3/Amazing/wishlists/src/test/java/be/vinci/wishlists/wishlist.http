@@ -1,0 +1,14 @@
+### PUT a product
+PUT http://localhost:9003/wishlists/PetWard/11
+
+### GET a wishlist
+GET http://localhost:9003/wishlists/user/PetWard
+
+### DELETE a wishlist of user
+DELETE http://localhost:9003/wishlists/PetWard/1
+
+### DELETE all wishlist of user
+DELETE http://localhost:9003/wishlists/user/PetWard
+
+### DELETE all wishlist containing a product
+DELETE http://localhost:9003/wishlists/product/1
