@@ -1,0 +1,24 @@
+### createUser
+POST http://localhost:9005/users/iwezix
+Content-Type: application/json
+
+{
+  "pseudo": "iwezix",
+  "firstname": "Luca",
+  "lastname": "Nicolas",
+  "password": "azerty"
+}
+
+### deleteUser
+DELETE http://localhost:9005/users/iwezix
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdXRoMCIsInBzZXVkbyI6Iml3ZXppeCJ9.kIDe28T31gU1RySstgjUMlhDPb504dqBwn_Bds-u59b_tqLRMd0i3iQxHWvyVGAcJdVkihIQtfFSFnQf8S90HQ
+
+### addWishlist
+POST http://localhost:9005/wishlist/iwezix/1
+Content-Type: application/json
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdXRoMCIsInBzZXVkbyI6Iml3ZXppeCJ9.kIDe28T31gU1RySstgjUMlhDPb504dqBwn_Bds-u59b_tqLRMd0i3iQxHWvyVGAcJdVkihIQtfFSFnQf8S90HQ
+
+{
+  "pseudo": "iwezix",
+  "productId": 1
+}

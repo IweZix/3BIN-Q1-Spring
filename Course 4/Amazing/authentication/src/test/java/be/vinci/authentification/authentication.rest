@@ -1,0 +1,23 @@
+### Create safeCredentials
+POST http://localhost:9004/authentication/iwezix
+Content-Type: application/json
+
+{
+  "pseudo": "iwezix",
+  "password": "azerty"
+}
+
+### Connect
+POST http://localhost:9004/authentication/connect
+Content-Type: application/json
+
+{
+  "pseudo": "iwezix",
+  "password": "azerty"
+}
+
+### Verify token
+POST http://localhost:9004/authentication/verify
+Content-Type: application/json
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdXRoMCIsInBzZXVkbyI6IkNhdDRMaWZlIn0.afK_ZCaH2SvkOp8WaoPO5VMKnEDHpyKc5DmWHrP3fjEX_IzSYFeb5vEmxg-rb7b1dvDZPWc_4ab6tREHWOhGPA
