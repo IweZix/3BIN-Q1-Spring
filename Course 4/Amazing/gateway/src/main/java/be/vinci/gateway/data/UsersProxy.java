@@ -18,5 +18,4 @@ public interface UsersProxy {
 
     @GetMapping("/users/{pseudo}")
     ResponseEntity<User> readOne(@PathVariable String pseudo);
-
 }
